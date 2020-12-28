@@ -15,6 +15,7 @@ class FAProgressBar extends StatefulWidget {
     this.backgroundColor = const Color(0x00FFFFFF),
     this.progressColor = const Color(0xFFFA7268),
     this.changeColorValue,
+    this.gradient,
     this.changeProgressColor = const Color(0xFF5F4B8B),
     this.displayText,
     this.displayTextStyle =
@@ -24,6 +25,7 @@ class FAProgressBar extends StatefulWidget {
   final int currentValue;
   final int maxValue;
   final double size;
+  final Gradient? gradient;
   final Duration animatedDuration;
   final Axis direction;
   final VerticalDirection verticalDirection;
@@ -125,6 +127,7 @@ class AnimatedProgressBar extends AnimatedWidget {
         color: progressColor,
         borderRadius: widget._borderRadius,
         border: widget.border,
+        gradient: widget.gradient,
       ),
     );
     progressWidgets.add(progressWidget);
